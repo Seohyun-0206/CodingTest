@@ -1,12 +1,10 @@
 def solution(s):
-    answer = 0
+    stack = []
     s = list(s.split())
-    x = 0
     for i in s:
-        if i != 'Z':
-            x = int(i)
-            answer += x
+        if i == 'Z':
+            stack.pop()
         else:
-            answer -= x
-            x = 0
-    return answer
+            stack.append(int(i))
+                         
+    return sum(stack)
