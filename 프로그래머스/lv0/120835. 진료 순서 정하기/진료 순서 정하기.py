@@ -1,10 +1,4 @@
 def solution(emergency):
-    answer = []
-    for i in emergency:
-        cnt = 0
-        for j in emergency:
-            if i <= j:
-                cnt += 1
-        answer.append(cnt)
+    e = sorted(emergency, reverse=True)
             
-    return answer
+    return [e.index(i) + 1 for i in emergency]
