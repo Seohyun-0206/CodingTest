@@ -1,17 +1,13 @@
 import sys
 
 n = int(input())
-
-arr = []
-for i in range(n):
-    arr.append(list(map(int, sys.stdin.readline().split())))
+arr = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
 
 rank = [1] * n
 for i in range(n):
-    for j in arr:
-        if arr[i][0] < j[0] and arr[i][1] < j[1]:
+    for j in range(n):
+        if i != j and arr[i][0] < arr[j][0] and arr[i][1] < arr[j][1]:
             rank[i] += 1
 
 
-for i in range(n):
-    print(rank[i], end=' ')
+print(' '.join(map(str, rank)))
