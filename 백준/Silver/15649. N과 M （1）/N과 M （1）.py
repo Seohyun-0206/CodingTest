@@ -1,12 +1,20 @@
-import itertools
+def solution(num):
+    if num == m:
+        print(" ".join(map(str, result)))
+        return
+
+    for i in range(n):
+        if visited[i] == False:
+            visited[i] = True
+            result.append(i + 1)
+            solution(num + 1)
+            visited[i] = False
+            result.pop()
 
 n, m = map(int, input().split())
 
-arr = [i + 1 for i in range(n)]
+visited = [False] * (n + 1)
 
-num = list(itertools.permutations(arr, m))
+result = []
 
-for x in num:
-       print(*x)
-
-
+solution(0)
