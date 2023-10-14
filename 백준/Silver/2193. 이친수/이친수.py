@@ -1,7 +1,7 @@
 import sys
 n = int(input())
 
-d = [[0, 0, 0] for _ in range(91)]
+d = [[0] * 3 for _ in range(91)]
 
 d[1] = [1, 0, 1]
 d[2] = [1, 1, 0]
