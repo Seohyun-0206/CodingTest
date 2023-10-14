@@ -1,13 +1,10 @@
 n = int(input())
 
-d = [0] * 1001
-d[0] = 0
-d[1] = 1
-d[2] = 2
+dp = [0] * 1001
 
+dp[1] = 1
+dp[2] = 2
 for i in range(3, n + 1):
-    d[i] = (d[i - 1] + d[i - 2]) %10007
+    dp[i] = (dp[i - 1] + dp[i - 2]) % 10007
 
-
-
-print(d[n])
+print(dp[n])
