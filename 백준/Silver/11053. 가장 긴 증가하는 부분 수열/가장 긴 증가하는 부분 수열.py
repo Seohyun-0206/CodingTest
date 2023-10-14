@@ -1,13 +1,13 @@
 import sys
 n = int(input())
 
-arr = list(map(int, sys.stdin.readline().split()))
+A = list(map(int, sys.stdin.readline().split()))
 
-d = [1] * n
+d = [1] * 1001
 
-for i in range(0, n):
+for i in range(1, n):
     for j in range(0, i):
-        if arr[j] < arr[i]:
+        if A[i] > A[j]:
             d[i] = max(d[i], d[j] + 1)
 
 print(max(d))
