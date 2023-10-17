@@ -1,8 +1,3 @@
 def solution(myString):
-    answer = ''
-    for i in myString:
-        if i < "l":
-            answer += "l"
-        else:
-            answer += i
-    return answer
+    answer = ["l" if i < "l" else i for i in myString]
+    return "".join(answer)
